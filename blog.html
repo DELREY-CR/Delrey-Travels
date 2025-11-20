@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Blog de Del Rey Travels: guías, itinerarios reales, presupuestos y consejos para organizar mejor tus viajes.">
+    <meta name="author" content="Del Rey Travels">
+    <link rel="icon" href="img/favicon.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Blog de Del Rey Travels — Guías, itinerarios y tips de viaje</title>
+</head>
+
+<body>
+    <!-- HEADER / NAVEGACIÓN -->
+    <header class="header">
+        <div class="header-contenedor">
+            <a href="index.html" class="logo">
+                <img src="img/logo.jpg" alt="Logotipo Del Rey Travels" width="100" height="100">
+            </a>
+
+            <nav class="nav-principal" aria-label="Navegación principal">
+                <ul>
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="index.html#sobre-mi">Sobre mí</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main id="inicio">
+        <!-- HERO BLOG -->
+        <section class="hero hero-blog">
+            <div class="hero-contenido">
+                <h1>Blog de Del Rey Travels</h1>
+                <p>
+                    Guías, itinerarios reales y consejos prácticos para que planifiques tu viaje con más claridad,
+                    menos estrés y un presupuesto más ordenado.
+                </p>
+                <p class="hero-etiqueta">Guías de destinos • Presupuestos • Itinerarios reales</p>
+            </div>
+
+            <div class="hero-banner">
+                <img src="img/bannerhero.webp" alt="Persona escribiendo su diario de viaje con mapa y cámara"
+                    width="1200" height="400">
+            </div>
+        </section>
+
+        <!-- LISTADO DE ARTÍCULOS -->
+        <section class="blog-resumen">
+            <h2>Últimos artículos del blog</h2>
+            <p class="blog-intro">Aquí iré compartiendo mis rutas reales, errores que cometí y lo que sí volvería a
+                hacer en
+                cada viaje.</p>
+
+            <div class="blog-contenedor">
+                <!-- POST 1 -->
+                <article class="post">
+                    <img src="img/tailandia.jpg" alt="Templo en Tailandia al atardecer" width="350" height="250">
+                    <h3>Guía básica para tu primer viaje a Tailandia</h3>
+                    <p>
+                        Qué tener en cuenta antes de comprar el pasaje: clima, temporada de lluvias, presupuesto diario
+                        recomendado
+                        y consejos para moverte entre Bangkok, playas e islas.
+                    </p>
+                    <a href="#" class="btn-ver-mas">Leer artículo</a>
+                </article>
+
+                <!-- POST 2 -->
+                <article class="post">
+                    <img src="img/viaje.jpg" alt="Persona con mochila frente a un paisaje" width="350" height="250">
+                    <h3>Cómo organizar un viaje largo sin morir en el intento</h3>
+                    <p>
+                        Paso a paso para ordenar ideas, tiempos y reservas cuando tienes varios destinos: qué priorizar,
+                        cómo armar
+                        un cronograma realista y en qué momentos conviene dejar espacios libres.
+                    </p>
+                    <a href="#" class="btn-ver-mas">Leer artículo</a>
+                </article>
+
+                <!-- POST 3 -->
+                <article class="post">
+                    <img src="img/reservas.jpg" alt="Persona reservando alojamientos desde el computador" width="350"
+                        height="250">
+                    <h3>Errores comunes al reservar alojamientos</h3>
+                    <p>
+                        Cosas que parecen detalles, pero arruinan un viaje: zonas poco prácticas, alojamientos lejos del
+                        transporte,
+                        políticas de cancelación engañosas y fotos que no muestran la realidad.
+                    </p>
+                    <a href="#" class="btn-ver-mas">Leer artículo</a>
+                </article>
+
+                <!-- POST 4 (EXTRA OPCIONAL) -->
+                <article class="post">
+                    <img src="img/presupuesto.jpg" alt="Cuaderno con anotaciones de presupuesto de viaje" width="350"
+                        height="250">
+                    <h3>Cómo armar un presupuesto de viaje realista</h3>
+                    <p>
+                        Dejar de “adivinar” cuánto vas a gastar y empezar a calcular: alojamiento, transporte, comida,
+                        extras y
+                        margen para imprevistos, con ejemplos basados en viajes reales.
+                    </p>
+                    <a href="#" class="btn-ver-mas">Leer artículo</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- LLAMADO A LA ACCIÓN -->
+        <section class="contacto contacto-blog">
+            <h2>¿Quieres que te ayude con tu próximo viaje?</h2>
+            <p class="contacto-intro">
+                Si después de leer el blog quieres un itinerario hecho a tu medida, escríbeme y lo vemos juntos.
+            </p>
+            <div class="contacto-imagen">
+                <img src="img/viajero.webp" alt="Persona viajando mirando un paisaje" width="500" height="400">
+            </div>
+            <div class="contacto-contenedor">
+                <form action="https://formspree.io/f/mzzjordv" method="POST" class="formulario-contacto">
+                    <fieldset>
+                        <legend>Escríbeme desde el blog</legend>
+
+                        <div class="campo-form">
+                            <label for="name">Nombre:</label>
+                            <input type="text" id="name" name="name" autocomplete="name" required>
+                        </div>
+
+                        <div class="campo-form">
+                            <label for="email">Correo electrónico:</label>
+                            <input type="email" id="email" name="_replyto" autocomplete="email" required>
+                        </div>
+
+                        <div class="campo-form">
+                            <label for="message">Mensaje:</label>
+                            <textarea id="message" name="message" rows="4"
+                                placeholder="Cuéntame qué destino tienes en mente y en qué necesitas ayuda."
+                                required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primario">Enviar mensaje</button>
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-contenedor">
+            <div class="footer-redes">
+                <h3>Sígueme y viaja conmigo</h3>
+                <nav aria-label="Redes sociales">
+                    <a href="mailto:contacto@delreytravels.com">
+                        <img src="img/gmail.webp" alt="Correo electrónico" width="32" height="32">
+                    </a>
+                    <a href="https://www.instagram.com/delrey.travels?igsh=N255dGRhNTFlZXZl&utm_source=qr"
+                        target="_blank" rel="noopener noreferrer">
+                        <img src="img/instagram.webp" alt="Instagram" width="32" height="32">
+                    </a>
+                    <a href="https://www.flickr.com/photos/198182539@N03/" target="_blank" rel="noopener noreferrer">
+                        <img src="img/flickr.webp" alt="Galería en Flickr" width="32" height="32">
+                    </a>
+                </nav>
+            </div>
+
+            <div class="footer-logo">
+                <p>Todos los derechos reservados © <span id="year"></span> Del Rey Travels</p>
+                <img src="img/logo.jpg" alt="Logotipo Del Rey Travels" width="80" height="80">
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT PARA EL AÑO -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+
+</html>
