@@ -4,9 +4,10 @@
 :root {
   --color-fondo: #f5f5f5;
   --color-texto: #222222;
-  --color-principal: #257e11;
+  --color-principal: #f2e8cf;
   /* Azul principal de la marca */
-  --color-secundario: #36f10c;
+  --color-secundario: #2a7f86;
+  --color-terciario: #f2e8cf;
   /* Para detalles, botones, subrayados etc */
   --color-blanco: #ffffff;
   --color-gris-suave: #e0e0e0;
@@ -70,7 +71,7 @@ section {
 h1,
 h2,
 h3 {
-  color: var(--color-principal);
+  color: var(--color-blanco);
 }
 
 /* Títulos de sección centrados y con espacio inferior */
@@ -90,7 +91,7 @@ section p {
 ========================= */
 
 .header {
-  background-color: var(--color-blanco);
+  background-color:var(--color-blanco);
   /* Fondo blanco para el header */
   border-bottom: 1px solid var(--color-gris-suave);
   /* Línea sutil debajo del header */
@@ -153,6 +154,7 @@ section p {
   color: var(--color-principal);
   transition: color 0.3s ease;
 }
+
 
 /* ============================
    2 HERO CON TEXTO SOBRE LA IMAGEN
@@ -271,9 +273,9 @@ section p {
   /* bordes redondeados */
   font-weight: 600;
   /* negrita */
-  color: #fff;
+  color: var(--color-blanco);
   /* color del texto */
-  background-color: var(--color-principal);
+  background-color: var(--color-secundario);
   /* color de fondo del botón */
   min-width: 160px;
   /* ancho mínimo del botón */
@@ -296,13 +298,13 @@ section p {
   padding: 0px 20px;  /* espacio interno */
   max-width: 1200px; /* ancho máximo */
   margin: 0 auto;/* centra el contenedor */
-  background-color: #3f3838;
+  background-color: var(--color-secundario);
 }
 
 .sobre-mi-texto {
   flex: 1; /* ocupa todo el espacio disponible */
   max-width: 600px; /* ancho máximo del texto */
-  color: #fff;
+  color: var(--color-blanco);
 }
 
 .sobre-mi-texto h2 {
@@ -338,92 +340,25 @@ section p {
 ============================ */
 @media (max-width: 768px) {
 
-  /* Header más bajito */
-  .header {
-    padding: 0.3rem 0;
-  }
-
   .header-contenedor {
-    padding: 0 0.75rem;        /* menos espacio lateral */
-    gap: 0.5rem;
+    flex-direction: column;      /* logo arriba - menú abajo */
+    gap: 10px;                   /* espacio entre logo y menú */
+    padding: 10px 0;
   }
 
-  /* Logo más pequeño en móvil */
   .logo img {
-    width: 60px;
-    height: 60px;
+    width: 70px;                 /* achica el logo */
+    height: 70px;
   }
 
-  /* Menú sigue en fila, pero más compacto */
   .nav-principal ul {
-    display: flex;
-    flex-direction: row;       /* <-- mantiene los links en horizontal */
-    gap: 1rem;                 /* menos separación */
+    flex-direction: column;      /* menú en columna */
+    gap: 6px;                    /* espacio entre los enlaces */
+    padding: 0;                  /* evita espacio extra */
   }
 
-  .nav-principal a {
-    font-size: 0.9rem;         /* texto más chico */
-    padding: 0;                /* sin padding extra vertical */
-  }
-}
-
-/* ============================
-   HERO RESPONSIVO (MÓVIL)
-   (texto debajo de la imagen)
-============================ */
-@media (max-width: 768px) {
-
-  /* El contenedor del hero ocupa todo el ancho */
-  .hero {
-    padding: 0 0 20px 0;
-  }
-
-  .hero-imagen {
-    width: 100%;
-    max-width: none;
-  }
-
-  /* La imagen se adapta al ancho, sin altura fija */
-  .hero-imagen img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-
-  /* El texto deja de estar encima: se coloca DEBAJO de la imagen */
-  .hero-texto {
-    position: static;          /* ya no es absoluto */
-    transform: none;           /* sin translate */
-    max-width: 90%;
-    margin: 0 auto;
-    margin-top: -30px;         /* pequeño solapamiento bonito con la imagen */
-    background: rgba(255, 255, 255, 0.9);
-    padding: 14px 16px;
-    border-radius: 12px;
-    text-align: center;
-  }
-
-  .hero-texto h1 {
-    font-size: 1.3rem;
-    margin-bottom: 0.6rem;
-  }
-
-  .hero-texto p {
-    font-size: 0.9rem;
-    margin-bottom: 0.4rem;
-  }
-
-  .hero-botones {
-    flex-direction: column;    /* botones uno debajo del otro */
-    gap: 0.6rem;
-    margin-top: 0.6rem;
-  }
-
-  .hero-botones a {
-    width: 100%;
-    max-width: 230px;
-    margin: 0 auto;
-    min-width: 0;
-    padding: 9px 0;
+  .nav-principal ul li a {
+    font-size: 14px;             /* letras más pequeñas */
+    padding: 6px 0;              /* más compacto */
   }
 }
