@@ -1,11 +1,13 @@
 /* =========================
-   1. VARIABLES DE COLOR Y TIPOGRAFÍA
+   VARIABLES DE COLOR Y TIPOGRAFÍA
 ========================= */
 :root {
   --color-fondo: #f5f5f5;
   --color-texto: #222222;
-  --color-principal: #257e11;      /* Azul principal de la marca */
-  --color-secundario: #36f10c;     /* Para detalles, botones, subrayados etc */
+  --color-principal: #257e11;
+  /* Azul principal de la marca */
+  --color-secundario: #36f10c;
+  /* Para detalles, botones, subrayados etc */
   --color-blanco: #ffffff;
   --color-gris-suave: #e0e0e0;
 
@@ -13,7 +15,7 @@
 }
 
 /* =========================
-   2. RESET BÁSICO para quitar formatos y margenes por defecto e iniciar desde cero, valores generales
+  RESET BÁSICO para quitar formatos y margenes por defecto e iniciar desde cero, valores generales
 ========================= */
 *,
 *::before,
@@ -24,7 +26,7 @@
 }
 
 /* =========================
-   3. ESTILOS GENERALES: Define look basico, color fondo, tipografia.
+  ESTILOS GENERALES: Define look basico, color fondo, tipografia.
    imagenes responsivas, limpia listas y enlaces. Centra titulos.
 ========================= */
 body {
@@ -57,9 +59,11 @@ main {
   padding: 2rem 1rem;
 }
 
-/* Separación entre secciones */
+/* Separación y línea para TODAS las secciones */
 section {
-  margin-bottom: 3rem;
+  padding: 40px 0; /* espacio arriba y abajo */
+  margin-bottom: 0; /* sin espacio extra debajo */
+  
 }
 
 /* Títulos con color de marca */
@@ -82,41 +86,59 @@ section p {
 }
 
 /* =========================
-   4. harder y navegacion 
+   1 HAEADER CON LOGO Y NAVEGACIÓN 
 ========================= */
 
 .header {
-  background-color: var(--color-blanco); /* Fondo blanco para el header */
-  border-bottom: 1px solid var(--color-gris-suave); /* Línea sutil debajo del header */
-  padding: 0.5rem 0; /* agregado espaciado vertical */
-  position: sticky; /* Hace que el header se quede fijo al hacer scroll */
-  top: 0; /* Posición superior */
-  z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
-  
- 
+  background-color: var(--color-blanco);
+  /* Fondo blanco para el header */
+  border-bottom: 1px solid var(--color-gris-suave);
+  /* Línea sutil debajo del header */
+  padding: 0.5rem 0;
+  /* agregado espaciado vertical */
+  position: sticky;
+  /* Hace que el header se quede fijo al hacer scroll */
+  top: 0;
+  /* Posición superior */
+  z-index: 1000;
+  /* Asegura que el header esté por encima de otros elementos */
+
+
 }
+
 /* Contenedor interno para alinear logo y menú */
 .header-contenedor {
 
-  max-width: 1200px; /* Ancho máximo del contenedor */
-  margin: 0 auto;              /* centrar en la página */
-  padding: 0 1rem;             /* espacio lateral */
-  display: flex;               /* pone logo y menú en misma fila */
-  align-items: center;         /* centrarlos verticalmente */
-  justify-content: space-between; /* logo a un lado, menú al otro */
+  max-width: 1200px;
+  /* Ancho máximo del contenedor */
+  margin: 0 auto;
+  /* centrar en la página */
+  padding: 0 1rem;
+  /* espacio lateral */
+  display: flex;
+  /* pone logo y menú en misma fila */
+  align-items: center;
+  /* centrarlos verticalmente */
+  justify-content: space-between;
+  /* logo a un lado, menú al otro */
 }
 
 /* Estilos para el logo */
 .logo img {
-  width: 90px;/* Ajusta el tamaño del logo */
-  height: 90px; /* Ajusta el tamaño del logo */
-  object-fit: cover; /* Asegura que la imagen mantenga su proporción */
+  width: 90px;
+  /* Ajusta el tamaño del logo */
+  height: 90px;
+  /* Ajusta el tamaño del logo */
+  object-fit: cover;
+  /* Asegura que la imagen mantenga su proporción */
 }
 
 /* Navegacion  */
 .nav-principal ul {
-  display: flex;      /* links en fila */
-  gap: 2rem;          /* separación entre enlaces */
+  display: flex;
+  /* links en fila */
+  gap: 2rem;
+  /* separación entre enlaces */
 }
 
 /* Enlaces del menú */
@@ -133,90 +155,275 @@ section p {
 }
 
 /* ============================
-   HERO CON TEXTO SOBRE LA IMAGEN
+   2 HERO CON TEXTO SOBRE LA IMAGEN
 ============================ */
 
 /* CONTENEDOR DEL HERO */
 .hero {
-  width: 100%; /* ancho completo */
-  display: flex; /* pone el contenido en fila */
-  justify-content: center; /* centra horizontalmente */
-  padding: 20px 0; /* márgenes arriba y abajo */
-  border-bottom: 1px solid var(--color-gris-suave);
-  
+  width: 100%;
+  /* ancho completo */
+  display: flex;
+  /* pone el contenido en fila */
+  justify-content: center;
+  /* centra horizontalmente */
+  padding: 20px 0;
+
 }
+
 /* CONTENEDOR DE LA IMAGEN, texto y todo*/
 .hero-imagen {
   position: relative; /* para posicionar el texto sobre la imagen */
-  width: 90%;            /* ancho del banner */
+  width: 100%; /* ancho del banner */
   max-width: 1200px; /* ancho máximo */
-   
+
 }
+
 /* IMAGEN AJUSTADA */
 .hero-imagen img {
-  width: 100%; /* ancho completo */
-  height: 580px; /* AJUSTA ESTA ALTURA A TU GUSTO */
-  object-fit: cover;/* recorta sin deformarse */
-  display: block; /* elimina espacio abajo de la imagen */
+  width: 100%;
+  /* ancho completo */
+  height: 580px;
+  /* AJUSTA ESTA ALTURA A TU GUSTO */
+  object-fit: cover;
+  /* recorta sin deformarse */
+  display: block;
+  /* elimina espacio abajo de la imagen */
 }
 
 .hero-texto {
-  position: absolute; /* para posicionar texto sobre la imagen */
-  top: 50%;               /* centro superior */
-  left: 50%;              /* centro horizontal */
-  transform: translate(-50%, -50%); /* centra exactamente con el centro de la imagen */
-  max-width: 680px; /* ancho máximo del rectangulo del texto */
+  position: absolute;
+  /* para posicionar texto sobre la imagen */
+  top: 50%;
+  /* centro superior */
+  left: 50%;
+  /* centro horizontal */
+  transform: translate(-50%, -50%);
+  /* centra exactamente con el centro de la imagen */
+  max-width: 680px;
+  /* ancho máximo del rectangulo del texto */
 
   /* Rectángulo translúcido */
-  background: rgba(255, 255, 255, 0.25); /* fondo blanco translúcido del cuadro del texto */
-  padding: 25px 30px; /* espacio interno  25 arriba y abajo, 30 lateral */
-  border-radius: 15px; /* bordes redondeados */
-  backdrop-filter: blur(4px); /* efecto desenfoque lo que esta detras del cuadro no toda la imagen */
-  color: #000; /* color del texto */
-  text-align: center; /* centra el texto */
+  background: rgba(255, 255, 255, 0.25);
+  /* fondo blanco translúcido del cuadro del texto */
+  padding: 25px 30px;
+  /* espacio interno  25 arriba y abajo, 30 lateral */
+  border-radius: 15px;
+  /* bordes redondeados */
+  backdrop-filter: blur(4px);
+  /* efecto desenfoque lo que esta detras del cuadro no toda la imagen */
+  color: #000;
+  /* color del texto */
+  text-align: center;
+  /* centra el texto */
 }
 
 /* TÍTULO */
 .hero-texto h1 {
-  font-size: 2rem; /* tamaño del título */
-  font-weight: 700; /* negrita */
-  margin-bottom: 15px; /* espacio debajo del título */
+  font-size: 2rem;
+  /* tamaño del título */
+  font-weight: 700;
+  /* negrita */
+  margin-bottom: 15px;
+  /* espacio debajo del título */
   color: #ffffff;
 }
 
 /* PÁRRAFOS */
 .hero-texto p {
-  font-size: 1rem; /* tamaño del texto */
-  margin-bottom: 10px; /* espacio debajo del párrafo */
-  color: #000; /* color del texto */
+  font-size: 1rem;
+  /* tamaño del texto */
+  margin-bottom: 10px;
+  /* espacio debajo del párrafo */
+  color: #000;
+  /* color del texto */
 }
+
 /* ETIQUETA */
 
 .hero-etiqueta {
- font-weight: 600; /* negrita */
- color: #000; /* color del texto */
+  font-weight: 600;
+  /* negrita */
+  color: #000;
+  /* color del texto */
 }
 
 .hero-botones {
-  margin-top: 15px; /* espacio arriba de los botones */
-  display: flex; /* pone los botones en fila */
-  gap: 15px; /* espacio entre los botones */
-  justify-content: center; /* centra los botones */
+  margin-top: 15px;
+  /* espacio arriba de los botones */
+  display: flex;
+  /* pone los botones en fila */
+  gap: 15px;
+  /* espacio entre los botones */
+  justify-content: center;
+  /* centra los botones */
 }
+
 /* Hover cambio de colores de los botones */
 .hero-botones a:hover {
-  background-color: #000; /* o el color que quieras */
+  background-color: #000;
+  /* o el color que quieras */
 }
 
 .hero-botones a {
-  padding: 10px 20px; /* espacio interno de los botones */
-  border-radius: 8px; /* bordes redondeados */
-  font-weight: 600; /* negrita */
-  color: #fff; /* color del texto */
-  background-color: var(--color-principal); /* color de fondo del botón */
-  min-width: 160px; /* ancho mínimo del botón */
-  text-align: center; /* centra el texto del botón */
-  transition: background-color 0.3s ease; /* transición suave al cambiar el color */
+  padding: 10px 20px;
+  /* espacio interno de los botones */
+  border-radius: 8px;
+  /* bordes redondeados */
+  font-weight: 600;
+  /* negrita */
+  color: #fff;
+  /* color del texto */
+  background-color: var(--color-principal);
+  /* color de fondo del botón */
+  min-width: 160px;
+  /* ancho mínimo del botón */
+  text-align: center;
+  /* centra el texto del botón */
+  transition: background-color 0.3s ease;
+  /* transición suave al cambiar el color */
+}
+
+/* ============================
+   3 SECCIÓN SOBRE MI
+============================ */
+
+
+.sobre-mi-contenedor {
+  display: flex;  /* pone imagen y texto en fila */
+  align-items: center; /* centra verticalmente */
+  gap: 2rem;  /* espacio entre imagen y texto */
+  justify-content: space-between; /* separa imagen y texto */
+  padding: 0px 20px;  /* espacio interno */
+  max-width: 1200px; /* ancho máximo */
+  margin: 0 auto;/* centra el contenedor */
+  background-color: #3f3838;
+}
+
+.sobre-mi-texto {
+  flex: 1; /* ocupa todo el espacio disponible */
+  max-width: 600px; /* ancho máximo del texto */
+  color: #fff;
+}
+
+.sobre-mi-texto h2 {
+  margin-bottom: 1rem; /* Espacio bajo el título */
+  font-size: 2rem; /* Un tamaño lindo para el título */
+}
+
+.sobre-mi-texto p {
+  text-align: left; /* Alinea párrafos a la izquierda */
+  margin: 0 0 1rem 0; /* Quita el auto centrado de "section p" */
+  max-width: none; /* El ancho lo controla .sobre-mi-texto */
+  line-height: 1.6; /* Lectura cómoda de las líneas */
+}
+
+.sobre-mi-imagen {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.sobre-mi-imagen img {
+  width: 80%; /* ocupa todo el contenedor */
+  height: auto; /* mantiene proporciones */
+  max-height: 450px;   /* ← controla la altura máxima de la imagen */
+  object-fit: cover; /* recorta sin deformarse */
+  border-radius: 10px; /* opcional: para que quede más elegante */
 }
 
 
+/* ============================
+   NAV RESPONSIVA (MÓVIL) — COMPACTA Y HORIZONTAL
+============================ */
+@media (max-width: 768px) {
+
+  /* Header más bajito */
+  .header {
+    padding: 0.3rem 0;
+  }
+
+  .header-contenedor {
+    padding: 0 0.75rem;        /* menos espacio lateral */
+    gap: 0.5rem;
+  }
+
+  /* Logo más pequeño en móvil */
+  .logo img {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* Menú sigue en fila, pero más compacto */
+  .nav-principal ul {
+    display: flex;
+    flex-direction: row;       /* <-- mantiene los links en horizontal */
+    gap: 1rem;                 /* menos separación */
+  }
+
+  .nav-principal a {
+    font-size: 0.9rem;         /* texto más chico */
+    padding: 0;                /* sin padding extra vertical */
+  }
+}
+
+/* ============================
+   HERO RESPONSIVO (MÓVIL)
+   (texto debajo de la imagen)
+============================ */
+@media (max-width: 768px) {
+
+  /* El contenedor del hero ocupa todo el ancho */
+  .hero {
+    padding: 0 0 20px 0;
+  }
+
+  .hero-imagen {
+    width: 100%;
+    max-width: none;
+  }
+
+  /* La imagen se adapta al ancho, sin altura fija */
+  .hero-imagen img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* El texto deja de estar encima: se coloca DEBAJO de la imagen */
+  .hero-texto {
+    position: static;          /* ya no es absoluto */
+    transform: none;           /* sin translate */
+    max-width: 90%;
+    margin: 0 auto;
+    margin-top: -30px;         /* pequeño solapamiento bonito con la imagen */
+    background: rgba(255, 255, 255, 0.9);
+    padding: 14px 16px;
+    border-radius: 12px;
+    text-align: center;
+  }
+
+  .hero-texto h1 {
+    font-size: 1.3rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .hero-texto p {
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .hero-botones {
+    flex-direction: column;    /* botones uno debajo del otro */
+    gap: 0.6rem;
+    margin-top: 0.6rem;
+  }
+
+  .hero-botones a {
+    width: 100%;
+    max-width: 230px;
+    margin: 0 auto;
+    min-width: 0;
+    padding: 9px 0;
+  }
+}
