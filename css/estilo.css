@@ -5,14 +5,23 @@
   --color-fondo: #f5f5f5;
   --color-texto: #222222;
   --color-principal: #f2e8cf;
-  /* Azul principal de la marca */
+  /* Color principal beige/crema de la marca */
   --color-secundario: #2a7f86;
   --color-terciario: #f2e8cf;
   /* Para detalles, botones, subrayados etc */
   --color-blanco: #ffffff;
   --color-gris-suave: #e0e0e0;
+  --fuente-principal: 'Inter', sans-serif;
+  --fuente-titulos: 'Playfair Display', serif;
+}
 
-  --fuente-principal: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+/* =========================
+   IMPORTACIÓN DE TIPOGRAFÍAS DESDE GOOGLE FONTS
+========================= */
+
+/* Títulos */
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
 }
 
 /* =========================
@@ -30,6 +39,7 @@
   ESTILOS GENERALES: Define look basico, color fondo, tipografia.
    imagenes responsivas, limpia listas y enlaces. Centra titulos.
 ========================= */
+
 body {
   font-family: var(--fuente-principal);
   background-color: var(--color-fondo);
@@ -52,13 +62,16 @@ a {
 img {
   max-width: 100%;
   height: auto;
-  display: block;
+  display: block; 
 }
 
 /* Espaciado general del contenido principal */
 main {
-  padding: 2rem 1rem;
+  margin: 0; /* elimina margen por defecto */
+  padding: 0; /* elimina padding por defecto */
+  width: 100%; /* asegura que ocupe todo el ancho */
 }
+
 
 /* Separación y línea para TODAS las secciones */
 section {
@@ -68,9 +81,13 @@ section {
 }
 
 /* Títulos con color de marca */
-h1,
-h2,
-h3 {
+h1, h2, h3 {
+  font-family: var(--fuente-titulos);
+  color: var(--color-texto);   /* texto oscuro por defecto */
+}
+
+/* y solo en el hero los pones blancos */
+.hero-texto h1 {
   color: var(--color-blanco);
 }
 
@@ -87,7 +104,7 @@ section p {
 }
 
 /* =========================
-   1 HAEADER CON LOGO Y NAVEGACIÓN 
+   1 HEADER CON LOGO Y NAVEGACIÓN 
 ========================= */
 
 .header {
@@ -147,6 +164,7 @@ section p {
   font-size: 1rem;
   font-weight: 500;
   color: var(--color-texto);
+  font-family: var(--fuente-principal);
 }
 
 /* Hover del menú (al pasar el mouse) */
@@ -160,210 +178,173 @@ section p {
    2 HERO CON TEXTO SOBRE LA IMAGEN
 ============================ */
 
-/* CONTENEDOR DEL HERO */
 .hero {
-  width: 100%;/* ancho completo */
-  display: flex;
-  /* pone el contenido en fila */
-  justify-content: center;
-  /* centra horizontalmente */
-  padding: 20px 0;
+  width: 100%; /* ancho completo de la ventana */
+  max-width: 100%; /* evita desbordamiento horizontal */
+  margin: 0; /* elimina margen por defecto */
+  padding: 0; /* elimina padding por defecto */
 
+  background-image: url('../img/banner-viajes.webp');   /* Imagen de fondo de hero */
+  background-repeat: no-repeat; /* No repetir la imagen */
+  background-size: cover; /* Asegura que la imagen cubra todo el área */
+  background-position: center; /* Centra la imagen */
+
+  height: 600px; /* altura fija para el hero */
+
+  display: flex; /* usa flexbox para centrar contenido */
+  align-items: center; /* centra verticalmente */
+  justify-content: center; /* centra horizontalmente */
 }
 
-/* CONTENEDOR DE LA IMAGEN, texto y todo*/
-.hero-imagen {
-  position: relative; /* para posicionar el texto sobre la imagen */
-  width: 100%; /* ancho del banner */
-  max-width: 1000px; /* ancho máximo */
+.hero-contenedor {
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para mejorar legibilidad */
+  padding: 32px 40px; /* Espaciado interno por costados */
+  border-radius: 15px; /* Bordes redondeados */
+  max-width: 800px; /* Ancho máximo del contenedor */
+  text-align: center; /* Centra el texto */
+} 
 
-}
-
-/* IMAGEN AJUSTADA */
-.hero-imagen img {
-  width: 100%;
-  /* ancho completo */
-  height: 580px;
-  /* AJUSTA ESTA ALTURA A TU GUSTO */
-  object-fit: cover;
-  /* recorta sin deformarse */
-  display: block;
-  /* elimina espacio abajo de la imagen */
-}
-
-
-.hero-texto {
-  position: absolute;
-  /* para posicionar texto sobre la imagen */
-  top: 50%;
-  /* centro superior */
-  left: 50%;
-  /* centro horizontal */
-  transform: translate(-50%, -50%);
-  /* centra exactamente con el centro de la imagen */
-  max-width: 680px;
-  /* ancho máximo del rectangulo del texto */
-
-  /* Rectángulo translúcido */
-  background: rgba(255, 255, 255, 0.25);
-  /* fondo blanco translúcido del cuadro del texto */
-  padding: 25px 30px;
-  /* espacio interno  25 arriba y abajo, 30 lateral */
-  border-radius: 15px;
-  /* bordes redondeados */
-  backdrop-filter: blur(4px);
-  /* efecto desenfoque lo que esta detras del cuadro no toda la imagen */
-  color: #000;
-  /* color del texto */
-  text-align: center;
-  /* centra el texto */
-}
-
-/* TÍTULO */
 .hero-texto h1 {
-  font-size: 2rem;
-  /* tamaño del título */
-  font-weight: 700;
-  /* negrita */
-  margin-bottom: 15px;
-  /* espacio debajo del título */
-  color: #ffffff;
+  color: var(--color-blanco); /* Color blanco para el título */
+  font-family: var(--fuente-titulos); /* Fuente de títulos */
+  font-size: 2.0rem; /* Tamaño del título */
+  margin-top: 3rem; /* Espacio encima del título */
+  margin-bottom: 1.5rem; /* Espacio debajo del título */
 }
-
-/* PÁRRAFOS */
 .hero-texto p {
-  font-size: 1rem;
-  /* tamaño del texto */
-  margin-bottom: 10px;
-  /* espacio debajo del párrafo */
-  color: #000;
-  /* color del texto */
+  color: var(--color-blanco); /* Color blanco para el párrafo */
+  font-size: 1.0rem; /* Tamaño del párrafo */
+  font-family: var(--fuente-principal); /* Fuente principal */
 }
-
-/* ETIQUETA */
-
-.hero-etiqueta {
-  font-weight: 600;
-  /* negrita */
-  color: #000;
-  /* color del texto */
+.hero-texto a {
+  display: inline-block; /* Hace que el enlace se comporte como un bloque en línea */
+  margin-top: 1rem; /* Espacio encima del botón */
+  padding: 10px 20px; /* Espaciado interno del botón */
+  background-color: var(--color-blanco); /* Fondo blanco para el botón */
+  color: var(--color-texto);  /* Color del texto del botón */
+  border-radius: 4px; /* Bordes redondeados */
+  font-weight: bold; /* Texto en negrita */
 }
-
-.hero-botones {
-  margin-top: 15px;
-  /* espacio arriba de los botones */
-  display: flex;
-  /* pone los botones en fila */
-  gap: 15px;
-  /* espacio entre los botones */
-  justify-content: center;
-  /* centra los botones */
-}
-
-/* Hover cambio de colores de los botones */
-.hero-botones a:hover {
-  background-color: #000;
-  /* o el color que quieras */
-}
-
-.hero-botones a {
-  padding: 10px 20px;
-  /* espacio interno de los botones */
-  border-radius: 8px;
-  /* bordes redondeados */
-  font-weight: 600;
-  /* negrita */
+.hero-texto a:hover {
+  background-color:#222222;
   color: var(--color-blanco);
-  /* color del texto */
-  background-color: var(--color-secundario);
-  /* color de fondo del botón */
-  min-width: 160px;
-  /* ancho mínimo del botón */
-  text-align: center;
-  /* centra el texto del botón */
   transition: background-color 0.3s ease;
-  /* transición suave al cambiar el color */
-}
+} 
 
 /* ============================
-   3 SECCIÓN SOBRE MI
+   3 SECCIÓN SOBRE MÍ
 ============================ */
 
+.sobre-mi {
+  background-color: var(--color-blanco); /* Fondo blanco para la sección */
+  padding: 60px 20px; /* Espaciado interno */
+}
 
 .sobre-mi-contenedor {
-  display: flex;  /* pone imagen y texto en fila */
-  align-items: center; /* centra verticalmente */
-  gap: 2rem;  /* espacio entre imagen y texto */
-  justify-content: space-between; /* separa imagen y texto */
-  padding: 0px 20px;  /* espacio interno */
-  max-width: 1000px; /* ancho máximo */
-  margin: 0 auto;/* centra el contenedor */
-  background-color: var(--color-secundario);
+  max-width: 1000px; /* Ancho máximo del contenedor */
+  margin: 0 auto; /* Centra el contenedor */
+  display: flex; /* Usa flexbox para diseño */
+  flex-direction: row; /* Mantiene los elementos en fila */
+  justify-content: space-between; /* Espacio entre texto e imagen */
+  gap: 80px; /* Espacio entre los elementos */
+  align-items: center; /* Alinea verticalmente al centro */
+  padding-top: 30px; /* Espacio arriba */
 }
 
-.sobre-mi-texto {
-  flex: 1; /* ocupa todo el espacio disponible */
-  max-width: 600px; /* ancho máximo del texto */
-  color: var(--color-blanco);
+.sobre-mi h2 {
+  font-size: 3rem; /* Tamaño del título */
+  margin-bottom: 1rem; /* Espacio debajo del título */
+  color: var(--color-texto); /* Color del texto */
+  text-align: center; /* Centra el título */
 }
 
-.sobre-mi-texto h2 {
-  margin-bottom: 1rem; /* Espacio bajo el título */
-  font-size: 2rem; /* Un tamaño lindo para el título */
-}
-
-.sobre-mi-texto p {
-  text-align: left; /* Alinea párrafos a la izquierda */
-  margin: 0 0 1rem 0; /* Quita el auto centrado de "section p" */
-  max-width: none; /* El ancho lo controla .sobre-mi-texto */
-  line-height: 1.6; /* Lectura cómoda de las líneas */
-}
-
-.sobre-mi-imagen {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  display: flex;
-  justify-content: center;
+.sobre-mi p {
+  font-size: 1.1rem; /* Tamaño del párrafo */
+  line-height: 1.5; /* Altura de línea para mejor legibilidad */
+  color: var(--color-texto); /* Color del texto */
+  text-align: center; /* Centra el texto */
 }
 
 .sobre-mi-imagen img {
-  width: 80%; /* ajusta el tamaño de la imagen */
-  height: auto; /* mantiene proporciones */
-  max-height: 500px;   /* ← controla la altura máxima de la imagen */
-  object-fit: cover; /* recorta sin deformarse */
-  border-radius: 20px; /* opcional: para que quede más elegante */
-    
-  /* EFECTO PREMIUM PARA MEZCLAR LA IMAGEN */
-  box-shadow: 0 0 35px rgba(255, 255, 255, 0.35); /* halo suave alrededor */
-  backdrop-filter: blur(6px); /* mezcla y suaviza */
-  filter: brightness(0.95) contrast(1.05); /* pequeño ajuste visual */
+  border-radius: 15px; /* Bordes redondeados para la imagen */
+  width: 100%; /* Se adapta al contenedor */
+  max-width: 600px; /* Pero no crece más de 600px */
+  height: auto; /* Altura automática para mantener proporción */
 }
+
+.sobre-mi-redes {
+  margin-top: 30px; /* Espacio arriba */
+  text-align: center; /* Centra el contenido */
+}
+
+.sobre-mi-redes h3 {
+  font-size: 1.2rem; /* Tamaño del título */
+  margin-bottom: 15px; /* Espacio debajo del título */
+  color: var(--color-texto); /* Color del texto */
+}
+
+.sobre-mi-redes nav {
+  display: flex; /* Coloca los íconos en fila */
+  justify-content: center; /* Centra los íconos */
+  gap: 20px; /* Espacio entre los íconos */
+}
+
+.sobre-mi-redes nav a {
+  transition: transform 0.3s ease; /* Efecto de transición */
+}
+
+.sobre-mi-redes nav a:hover {
+  transform: scale(1.1); /* Aumenta el tamaño al pasar el mouse */
+}
+/* ICONOS DE REDES EN TODO EL SITIO (Sobre mí + Footer) */
+.sobre-mi-redes i,
+.footer-redes i {
+  font-size: 30px;          /* tamaño más grande */
+  margin-right: 10px;       /* espacio entre iconos */
+  transition: 0.25s ease;   /* efecto suave */
+}
+
+/* Gmail */
+.fa-envelope {
+  color: #D44638; /* rojo Gmail */
+}
+
+/* Instagram */
+.fa-instagram {
+  color: #E1306C; /* rosa Instagram */
+}
+
+/* Flickr */
+.fa-flickr {
+  color: #0063dc; /* azul Flickr */
+}
+
+/* Hover premium */
+.sobre-mi-redes a i:hover,
+.footer-redes a i:hover {
+  transform: scale(1.15); /* aumenta tamaño */
+  opacity: 0.85;         /* ligera transparencia */
+}
+
 
 
 /* ============================
-   NAV RESPONSIVA (MÓVIL) — COMPACTA Y HORIZONTAL
-============================ */
-@media (max-width: 768px) {
+    4 SECCIÓN SERVICIOS
+============================ */ 
 
-  .header-contenedor {
-    flex-direction: column;      /* logo arriba - menú abajo */
-    gap: 10px;                   /* espacio entre logo y menú */
-    padding: 10px 0;
-  }
 
-  .logo img {
-    width: 70px;                 /* achica el logo */
-    height: 70px;
-  }
 
-  .nav-principal ul {
-    flex-direction: column;      /* menú en columna */
-    gap: 6px;                    /* espacio entre los enlaces */
-    padding: 0;                  /* evita espacio extra */
-  }
 
-  .nav-principal ul li a {
-    font-size: 14px;             /* letras más pequeñas */
-    padding: 6px 0;              /* más compacto */
-  }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
