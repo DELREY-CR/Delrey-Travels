@@ -24,6 +24,7 @@ h1, h2, h3 {
   font-family: 'Playfair Display', serif;
 }
 
+
 /* =========================
   RESET BÁSICO para quitar formatos y margenes por defecto e iniciar desde cero, valores generales
 ========================= */
@@ -84,7 +85,7 @@ section {
 h1, h2, h3 {
   font-family: var(--fuente-titulos);
   color: var(--color-texto);   /* texto oscuro por defecto */
-  font-size: 2.0rem; /* tamaño base de títulos */
+  font-size: 3.0rem; /* tamaño base de títulos */
 
 }
 
@@ -202,20 +203,22 @@ section p {
   background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para mejorar legibilidad */
   padding: 32px 40px; /* Espaciado interno por costados */
   border-radius: 15px; /* Bordes redondeados */
-  max-width: 800px; /* Ancho máximo del contenedor */
+  width: 80%; /* Ocupa el 80% del ancho del hero */
+  height: 80%; /* Ocupa el 80% de la altura del hero */
+  max-width: none; /* No limitar por ancho fijo */
   text-align: center; /* Centra el texto */
 } 
 
 .hero-texto h1 {
   color: var(--color-blanco); /* Color blanco para el título */
   font-family: var(--fuente-titulos); /* Fuente de títulos */
-  font-size: 2.0rem; /* Tamaño del título */
+  font-size: 3.0rem; /* Tamaño del título */
   margin-top: 3rem; /* Espacio encima del título */
-  margin-bottom: 1.5rem; /* Espacio debajo del título */
+  margin-bottom: 4rem; /* Espacio debajo del título */
 }
 .hero-texto p {
   color: var(--color-blanco); /* Color blanco para el párrafo */
-  font-size: 1.0rem; /* Tamaño del párrafo */
+  font-size: 1.5rem; /* Tamaño del párrafo */
   font-family: var(--fuente-principal); /* Fuente principal */
 }
 .hero-texto a {
@@ -226,11 +229,12 @@ section p {
   color: var(--color-texto);  /* Color del texto del botón */
   border-radius: 4px; /* Bordes redondeados */
   font-weight: bold; /* Texto en negrita */
+  font-size: 1rem; /* Tamaño del texto del botón */
 }
 .hero-texto a:hover {
-  background-color:#222222;
-  color: var(--color-blanco);
-  transition: background-color 0.3s ease;
+  background-color:#222222; /* Fondo oscuro al pasar el mouse */
+  color: var(--color-blanco);  /* Color del texto del botón */
+  transition: background-color 0.3s ease; /* Efecto de transición */
 } 
 
 /* ============================
@@ -248,13 +252,13 @@ section p {
   display: flex; /* Usa flexbox para diseño */
   flex-direction: row; /* Mantiene los elementos en fila */
   justify-content: space-between; /* Espacio entre texto e imagen */
-  gap: 80px; /* Espacio entre los elementos */
+  gap: 100px; /* Espacio entre los elementos */
   align-items: center; /* Alinea verticalmente al centro */
   padding-top: 30px; /* Espacio arriba */
 }
 
+
 .sobre-mi h2 {
-  font-size: 3rem; /* Tamaño del título */
   margin-bottom: 2rem; /* Espacio debajo del título */
   color: var(--color-texto); /* Color del texto */
   text-align: center; /* Centra el título */
@@ -281,8 +285,7 @@ section p {
 
 .sobre-mi-redes h3 {
   font-size: 1.2rem; /* Tamaño del título */
-  margin: 0 0 20px 0; /* Espacio debajo del título */
-  margin-top: 50px; /* Espacio arriba */
+  margin: 50px 0 20px; /* top 50px, right/left 0, bottom 20px */
   color: var(--color-texto); /* Color del texto */
 }
 
@@ -347,13 +350,28 @@ section p {
     4 SECCIÓN SERVICIOS
 ============================ */ 
 .servicios {
-  background-color: var(--color-blanco); /* Fondo blanco para la sección */
+  background-color: var(--color-terciario); /* Fondo para la sección */
   padding: 60px 20px; /* Espaciado interno */
+  text-align: center; /* Centra elementos inline/inline-block hijos (ej. .subtitulo) */
 }
 
 .servicios h2 {
-  text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 0.5rem; /* Reducir espacio debajo del título */
+  color: var(--color-texto); /* Color del texto */
+  text-align: center; /* Centra el título */
+}
+
+.servicios .subtitulo {
+  display: inline-block; /* Ajusta el ancho al contenido */
+  max-width: 900px; /* Limita el ancho para que el recuadro sea más estrecho */
+  background-color: var(--color-principal); /* Fondo del recuadro */
+  color: var(--color-blanco); /* Color del texto */
+  font-size: 1rem; /* Tamaño de fuente */
+  text-align: center; /* Centra el texto dentro del recuadro */
+  padding: 8px 14px; /* Espaciado interno del recuadro */
+  border-radius: 8px; /* Bordes suavizados */
+  margin-bottom: 30px; /* Reducir espacio debajo del recuadro */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08); /* Sutil sombra para elevar el recuadro */
 }
 
 .servicios-intro {
@@ -393,13 +411,6 @@ section p {
   max-width: 1200px; /* Ancho máximo para el texto */
 }
 
-.subtitulo {
-  font-size: 1.5rem; /* Tamaño de fuente */
-  color: var(--color-texto); /* Color del texto */
-  text-align: center; /* Centra el texto */
-  margin-bottom: 30px; /* Espacio debajo del subtítulo */
-}
-
 .btn-ver-mas {
   display: inline-block; /* Hace que el enlace se comporte como un bloque en línea */
   padding: 10px 20px; /* Espaciado interno del botón */
@@ -415,3 +426,12 @@ section p {
   color: var(--color-blanco);
   transition: background-color 0.3s ease;
 }
+
+
+/* ============================
+    CONTACTO
+============================ */
+.contacto {
+  background-color: var(--color-blanco); /* Fondo blanco para la sección */
+  padding: 60px 20px; /* Espaciado interno */
+  text-align: center; /* Centra elementos inline/inline-block hijos (ej. .subtitulo) */

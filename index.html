@@ -150,38 +150,53 @@
   </div>
 </section>
 
-    <!-- CONTACTO -->
+<div class="separador-delrey"></div>
+
+    <!-- CONTACTO: estructura en dos columnas (izquierda: título+formulario, derecha: imagen) -->
     <section id="contacto" class="contacto">
-      <p class="contacto-intro">Cuéntame a dónde quieres ir y qué tipo de experiencia buscas.</p>
+      <div class="contacto-contenedor">
 
-      <form action="https://formspree.io/f/mzzjordv" method="POST" class="formulario-contacto">
-        <fieldset>
-          <legend>Déjame tus datos</legend>
+        <div class="contacto-left">
+          <h2>Contacto</h2>
+          <p class="contacto-intro">Cuéntame a dónde quieres ir y qué tipo de experiencia buscas.</p>
 
-          <div class="campo-form">
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" name="name" autocomplete="name" required>
-          </div>
+          <form action="https://formspree.io/f/mzzjordv" method="POST" class="formulario-contacto">
+            <fieldset>
+              <legend>Déjame tus datos</legend>
 
-          <div class="campo-form">
-            <label for="email">Correo electrónico:</label>
-            <input type="email" id="email" name="_replyto" autocomplete="email" required>
-          </div>
+              <div class="campo-form">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" autocomplete="name" required>
+              </div>
 
-          <div class="campo-form">
-            <label for="phone">Teléfono:</label>
-            <input type="tel" id="phone" name="phone" autocomplete="tel" required>
-          </div>
+              <div class="campo-form">
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="_replyto" autocomplete="email" required>
+              </div>
 
-          <div class="campo-form">
-            <label for="message">Mensaje:</label>
-            <textarea id="message" name="message" rows="4" placeholder="Cuéntame destino, fechas y tipo de viaje."
-              required></textarea>
-          </div>
+              <div class="campo-form">
+                <label for="phone">Teléfono:</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel">
+              </div>
 
-          <button type="submit" class="btn-primario">Enviar mensaje</button>
-        </fieldset>
-      </form>
+              <div class="campo-form">
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" rows="4" placeholder="Cuéntame destino, fechas y tipo de viaje."></textarea>
+              </div>
+
+              <button type="submit" class="btn-primario">Enviar mensaje</button>
+            </fieldset>
+          </form>
+        </div>
+
+        <div class="contacto-right">
+          <!-- Imagen representativa: reemplaza 'img/contacto.webp' por la imagen que prefieras -->
+          <figure>
+            <img src="img/contacto1.webp" alt="Imagen de contacto" loading="lazy">
+          </figure>
+        </div>
+
+      </div>
     </section>
   </main>
 
