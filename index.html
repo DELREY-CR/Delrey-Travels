@@ -122,7 +122,7 @@
     <!-- Servicio 1 -->
     <article class="servicio">
       <img src="img/asesoria-viajes.webp" alt="Asesoría de Viaje Inteligente y planificación de viaje" width="400" height="300" loading="lazy">
-      <p>La mejor guía para comenzar tu viaje: elegimos el destino ideal, apps esenciales, qué considerar y cómo ahorrar desde el primer paso.</p>
+      <p class="parrafo-servicio">La mejor guía para comenzar tu viaje: elegimos el destino ideal, apps esenciales, qué considerar y cómo ahorrar desde el primer paso.</p>
 
       <div class="ver-mas-container">
         <a href="servicios.html" class="btn-ver-mas">Ver más</a>
@@ -132,7 +132,7 @@
     <!-- Servicio 2 -->
     <article class="servicio">
       <img src="img/reservas-precios.webp" alt="Itinerario de viaje organizado por rutas y precios" width="400" height="300" loading="lazy">
-      <p>Itinerario optimizado con actividades, rutas lógicas, zonas recomendadas y estimación general de costos.</p>
+      <p class="parrafo-servicio">Itinerario optimizado con actividades, rutas lógicas, zonas recomendadas y estimación general de costos de tu viaje.</p>
       <div class="ver-mas-container">
         <a href="servicios.html" class="btn-ver-mas">Ver más</a>
       </div>
@@ -141,7 +141,7 @@
     <!-- Servicio 3 -->
     <article class="servicio">
       <img src="img/itinerario-viajes.webp" alt="Itinerario con cotización y reservas de viaje" width="400" height="300" loading="lazy">
-      <p>Incluye el itinerario completo más cotización real, comparación de plataformas y recomendaciones exactas de dónde reservar.</p>
+      <p class="parrafo-servicio">Incluye el itinerario completo más cotización real, comparación de plataformas y recomendaciones exactas de dónde reservar.</p>
 
       <div class="ver-mas-container">
         <a href="servicios.html" class="btn-ver-mas">Ver más</a>
@@ -152,17 +152,17 @@
 
 <div class="separador-delrey"></div>
 
-    <!-- CONTACTO: estructura en dos columnas (izquierda: título+formulario, derecha: imagen) -->
+    <!-- CONTACTO: estructura en dos columnas -->
     <section id="contacto" class="contacto">
+      <h2>Contacto</h2>
+      <p class="subtitulo">Cuéntame a dónde quieres ir y qué tipo de experiencia buscas.</p>
+
       <div class="contacto-contenedor">
 
         <div class="contacto-left">
-          <h2>Contacto</h2>
-          <p class="contacto-intro">Cuéntame a dónde quieres ir y qué tipo de experiencia buscas.</p>
-
           <form action="https://formspree.io/f/mzzjordv" method="POST" class="formulario-contacto">
             <fieldset>
-              <legend>Déjame tus datos</legend>
+              <legend>Información de contacto</legend>
 
               <div class="campo-form">
                 <label for="name">Nombre:</label>
@@ -170,7 +170,7 @@
               </div>
 
               <div class="campo-form">
-                <label for="email">Correo electrónico:</label>
+                <label for="email">Email:</label>
                 <input type="email" id="email" name="_replyto" autocomplete="email" required>
               </div>
 
@@ -181,7 +181,7 @@
 
               <div class="campo-form">
                 <label for="message">Mensaje:</label>
-                <textarea id="message" name="message" rows="4" placeholder="Cuéntame destino, fechas y tipo de viaje."></textarea>
+                <textarea id="message" name="message" rows="4" placeholder="Cuéntame destino, fechas y tipo de viaje." required></textarea>
               </div>
 
               <button type="submit" class="btn-primario">Enviar mensaje</button>
@@ -190,10 +190,7 @@
         </div>
 
         <div class="contacto-right">
-          <!-- Imagen representativa: reemplaza 'img/contacto.webp' por la imagen que prefieras -->
-          <figure>
-            <img src="img/contacto1.webp" alt="Imagen de contacto" loading="lazy">
-          </figure>
+          <img src="img/contacto1.webp" alt="Planificación de itinerarios personalizados" loading="lazy">
         </div>
 
       </div>

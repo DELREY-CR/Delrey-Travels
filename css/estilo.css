@@ -221,6 +221,15 @@ section p {
   font-size: 1.5rem; /* Tamaño del párrafo */
   font-family: var(--fuente-principal); /* Fuente principal */
 }
+
+/* Etiqueta específica del hero (más específica que .hero-texto p) */
+.hero-texto .hero-etiqueta {
+  font-size: 1rem; /* Tamaño más pequeño que el párrafo normal */
+  letter-spacing: 2px; /* Espaciado entre letras para look elegante */
+  text-transform: uppercase; /* Todo en mayúsculas */
+  margin-bottom: 1.5rem; /* Espacio debajo antes de los botones */
+}
+
 .hero-texto a {
   display: inline-block; /* Hace que el enlace se comporte como un bloque en línea */
   margin-top: 1rem; /* Espacio encima del botón */
@@ -231,11 +240,20 @@ section p {
   font-weight: bold; /* Texto en negrita */
   font-size: 1rem; /* Tamaño del texto del botón */
 }
+
 .hero-texto a:hover {
   background-color:#222222; /* Fondo oscuro al pasar el mouse */
   color: var(--color-blanco);  /* Color del texto del botón */
   transition: background-color 0.3s ease; /* Efecto de transición */
-} 
+}
+
+/* Contenedor de los botones del hero */
+.hero-botones {
+  display: flex; /* Propiedad: activa Flexbox (layout flexible en fila o columna) */
+  gap: 40px; /* Propiedad: espacio entre elementos hijos (solo entre, no en bordes) */
+  justify-content: center; /* Propiedad: alinea elementos horizontalmente al centro */
+  flex-wrap: wrap; /* Propiedad: permite que elementos pasen a siguiente línea si no caben */
+}
 
 /* ============================
    3 SECCIÓN SOBRE MÍ
@@ -361,7 +379,8 @@ section p {
   text-align: center; /* Centra el título */
 }
 
-.servicios .subtitulo {
+/* Estilo general para TODOS los subtítulos del sitio */
+.subtitulo {
   display: inline-block; /* Ajusta el ancho al contenido */
   max-width: 900px; /* Limita el ancho para que el recuadro sea más estrecho */
   background-color: var(--color-principal); /* Fondo del recuadro */
@@ -372,14 +391,6 @@ section p {
   border-radius: 8px; /* Bordes suavizados */
   margin-bottom: 30px; /* Reducir espacio debajo del recuadro */
   box-shadow: 0 2px 6px rgba(0,0,0,0.08); /* Sutil sombra para elevar el recuadro */
-}
-
-.servicios-intro {
-  max-width: 600px; /* Ancho máximo para el texto introductorio */
-  margin: 0 auto 40px auto; /* Centra el texto y añade espacio abajo */
-  font-size: 1.2rem; /* Tamaño de fuente */
-  color: var(--color-texto); /* Color del texto */
-  text-align: center; /* Centra el texto */
 }
 
 .servicios-contenedor {
@@ -400,15 +411,26 @@ section p {
   text-align: center; /* Centra el texto */
   flex: 1; /* Cada servicio ocupa el mismo espacio */
   max-width: 350px; /* Ancho máximo de cada servicio */
+  
+  /* Flexbox vertical para alinear botones al fondo */
+  display: flex; /* Activa flexbox */
+  flex-direction: column; /* Dirección vertical */
+  justify-content: space-between; /* Distribuye espacio: contenido arriba, botón abajo */
 }
 
-.servicios p {
+/* Párrafos dentro de cada tarjeta de servicio */
+.servicio .parrafo-servicio {
   font-size: 1.1rem; /* Tamaño del párrafo */
   color: var(--color-texto); /* Color del texto */
-  margin-bottom: 60px; /* Espacio debajo del párrafo */
-  margin-top: 60px;
+  margin-bottom: 20px; /* Espacio moderado debajo del párrafo */
+  margin-top: 20px; /* Espacio moderado arriba del párrafo */
   text-align: center; /* Centra el texto */
-  max-width: 1200px; /* Ancho máximo para el texto */
+  flex-grow: 1; /* Permite que el párrafo crezca y empuje el botón hacia abajo */
+}
+
+/* Contenedor del botón "Ver más" */
+.ver-mas-container {
+  margin-top: auto; /* Empuja el contenedor hacia el fondo de la tarjeta */
 }
 
 .btn-ver-mas {
@@ -434,4 +456,91 @@ section p {
 .contacto {
   background-color: var(--color-blanco); /* Fondo blanco para la sección */
   padding: 60px 20px; /* Espaciado interno */
-  text-align: center; /* Centra elementos inline/inline-block hijos (ej. .subtitulo) */
+  text-align: center; /* Centra elementos inline-block como .subtitulo */
+}
+
+.contacto-contenedor {
+  display: flex; /* Activa Flexbox para layout en dos columnas */
+  gap: 40px; /* Espacio entre columna izquierda y derecha */
+  max-width: 1200px; /* Ancho máximo del contenedor */
+  margin: 0 auto; /* Centra el contenedor */
+  align-items: center; /* Alinea verticalmente al centro */
+}
+
+.contacto-left,
+.contacto-right {
+  flex: 1; /* Cada columna ocupa el mismo espacio (50/50) */
+}
+
+.contacto-left {
+  text-align: left; /* Alinea texto del formulario a la izquierda */
+}
+
+.contacto-right img {
+  border-radius: 15px; /* Bordes redondeados para la imagen */
+  width: 100%; /* Se adapta al contenedor */
+  height: auto; /* Mantiene proporción de la imagen */
+}
+
+/* Estilos del formulario de contacto */
+.formulario-contacto {
+  display: flex; /* Activa Flexbox */
+  flex-direction: column; /* Coloca campos en columna */
+  gap: 20px; /* Espacio entre campos */
+}
+
+.campo-form {
+  display: flex; /* Activa Flexbox */
+  flex-direction: column; /* Label arriba, input abajo */
+  gap: 8px; /* Espacio entre label e input */
+}
+
+.campo-form label {
+  font-weight: 500; /* Texto semi-negrita */
+  color: var(--color-texto); /* Color del texto */
+  font-size: 1rem; /* Tamaño de fuente */
+}
+
+.campo-form input,
+.campo-form textarea {
+  padding: 12px; /* Espaciado interno */
+  border: 1px solid var(--color-gris-suave); /* Borde gris suave */
+  border-radius: 6px; /* Bordes redondeados */
+  font-family: var(--fuente-principal); /* Fuente principal */
+  font-size: 1rem; /* Tamaño de fuente */
+  color: var(--color-texto); /* Color del texto */
+  background-color: var(--color-fondo); /* Fondo claro */
+  transition: border-color 0.3s ease; /* Transición suave */
+}
+
+.campo-form input:focus,
+.campo-form textarea:focus {
+  outline: none; /* Quita el borde por defecto */
+  border-color: var(--color-principal); /* Borde color principal al enfocarse */
+}
+
+.campo-form textarea {
+  resize: vertical; /* Permite redimensionar solo verticalmente */
+  min-height: 120px; /* Altura mínima del textarea */
+}
+
+.btn-primario {
+  padding: 12px 30px; /* Espaciado interno del botón */
+  background-color: var(--color-principal); /* Fondo color principal */
+  color: var(--color-blanco); /* Texto blanco */
+  border: none; /* Sin borde */
+  border-radius: 6px; /* Bordes redondeados */
+  font-weight: bold; /* Texto en negrita */
+  font-size: 1rem; /* Tamaño de fuente */
+  cursor: pointer; /* Cursor de mano al pasar sobre el botón */
+  transition: background-color 0.3s ease; /* Transición suave */
+  font-family: var(--fuente-principal); /* Fuente principal */
+}
+
+.btn-primario:hover {
+  background-color: var(--color-secundario); /* Fondo oscuro al pasar el mouse */
+}
+
+/* ============================
+    FOOTER
+============================ */
