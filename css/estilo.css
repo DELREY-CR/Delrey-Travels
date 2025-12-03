@@ -255,6 +255,14 @@ section p {
   flex-wrap: wrap; /* Propiedad: permite que elementos pasen a siguiente línea si no caben */
 }
 
+.hero-botones > * {
+  flex: 0 1 240px;    /* base 240px, pueden encoger si falta espacio */
+  min-width: 120px;   /* no se hagan demasiado pequeños */
+  max-width: 260px;   /* limite superior para que no ocupen demasiado */
+  padding: 10px 16px; /* reduce un poco el padding visual */
+  box-sizing: border-box;
+}
+
 /* ============================
    3 SECCIÓN SOBRE MÍ
 ============================ */
@@ -436,8 +444,8 @@ section p {
 .btn-ver-mas {
   display: inline-block; /* Hace que el enlace se comporte como un bloque en línea */
   padding: 10px 20px; /* Espaciado interno del botón */
-  margin-top: 5px; /* Espacio encima del botón */
-  margin-bottom: 5px; /* Espacio debajo del botón */
+  margin-top: 20px; /* Espacio encima del botón */
+  margin-bottom: 10px; /* Espacio debajo del botón */
   background-color: var(--color-principal); /* Fondo del botón */
   color: var(--color-blanco);  /* Color del texto del botón */
   border-radius: 4px; /* Bordes redondeados */
@@ -456,91 +464,7 @@ section p {
 .contacto {
   background-color: var(--color-blanco); /* Fondo blanco para la sección */
   padding: 60px 20px; /* Espaciado interno */
-  text-align: center; /* Centra elementos inline-block como .subtitulo */
+  text-align: center; /* Centra elementos inline/inline-block hijos (ej. .subtitulo) */
 }
-
 .contacto-contenedor {
-  display: flex; /* Activa Flexbox para layout en dos columnas */
-  gap: 40px; /* Espacio entre columna izquierda y derecha */
-  max-width: 1200px; /* Ancho máximo del contenedor */
-  margin: 0 auto; /* Centra el contenedor */
-  align-items: center; /* Alinea verticalmente al centro */
-}
-
-.contacto-left,
-.contacto-right {
-  flex: 1; /* Cada columna ocupa el mismo espacio (50/50) */
-}
-
-.contacto-left {
-  text-align: left; /* Alinea texto del formulario a la izquierda */
-}
-
-.contacto-right img {
-  border-radius: 15px; /* Bordes redondeados para la imagen */
-  width: 100%; /* Se adapta al contenedor */
-  height: auto; /* Mantiene proporción de la imagen */
-}
-
-/* Estilos del formulario de contacto */
-.formulario-contacto {
-  display: flex; /* Activa Flexbox */
-  flex-direction: column; /* Coloca campos en columna */
-  gap: 20px; /* Espacio entre campos */
-}
-
-.campo-form {
-  display: flex; /* Activa Flexbox */
-  flex-direction: column; /* Label arriba, input abajo */
-  gap: 8px; /* Espacio entre label e input */
-}
-
-.campo-form label {
-  font-weight: 500; /* Texto semi-negrita */
-  color: var(--color-texto); /* Color del texto */
-  font-size: 1rem; /* Tamaño de fuente */
-}
-
-.campo-form input,
-.campo-form textarea {
-  padding: 12px; /* Espaciado interno */
-  border: 1px solid var(--color-gris-suave); /* Borde gris suave */
-  border-radius: 6px; /* Bordes redondeados */
-  font-family: var(--fuente-principal); /* Fuente principal */
-  font-size: 1rem; /* Tamaño de fuente */
-  color: var(--color-texto); /* Color del texto */
-  background-color: var(--color-fondo); /* Fondo claro */
-  transition: border-color 0.3s ease; /* Transición suave */
-}
-
-.campo-form input:focus,
-.campo-form textarea:focus {
-  outline: none; /* Quita el borde por defecto */
-  border-color: var(--color-principal); /* Borde color principal al enfocarse */
-}
-
-.campo-form textarea {
-  resize: vertical; /* Permite redimensionar solo verticalmente */
-  min-height: 120px; /* Altura mínima del textarea */
-}
-
-.btn-primario {
-  padding: 12px 30px; /* Espaciado interno del botón */
-  background-color: var(--color-principal); /* Fondo color principal */
-  color: var(--color-blanco); /* Texto blanco */
-  border: none; /* Sin borde */
-  border-radius: 6px; /* Bordes redondeados */
-  font-weight: bold; /* Texto en negrita */
-  font-size: 1rem; /* Tamaño de fuente */
-  cursor: pointer; /* Cursor de mano al pasar sobre el botón */
-  transition: background-color 0.3s ease; /* Transición suave */
-  font-family: var(--fuente-principal); /* Fuente principal */
-}
-
-.btn-primario:hover {
-  background-color: var(--color-secundario); /* Fondo oscuro al pasar el mouse */
-}
-
-/* ============================
-    FOOTER
-============================ */
+ 
