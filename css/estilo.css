@@ -292,6 +292,7 @@ section p {
 }
 
 
+
 /* Párrafos generales dentro de servicios */
 .parrafo-servicio {
   font-size: 1.1rem;
@@ -562,6 +563,56 @@ section p {
   max-width: 260px;   /* limite superior para que no ocupen demasiado */
   padding: 10px 16px; /* reduce un poco el padding visual */
   box-sizing: border-box;
+}
+
+/*HERO2*/
+
+.hero2 {
+  width: 100%;
+  min-height: 320px;              /* Altura tipo banner angosto */
+  background-image: url("../img/banner-viajes.webp"); /* Ajusta tu imagen */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;            /* Centra el contenido verticalmente */
+  position: relative;
+}
+
+/* Overlay sutil para legibilidad del texto */
+.hero2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* Contenedor interno */
+.hero2 .hero-contenedor {
+  position: relative;             /* Para estar sobre el overlay */
+  background: transparent;        /* Sin fondo adicional */
+  display: flex;
+  flex-direction: column;         /* Coloca los elementos en columna */
+  justify-content: center;        /* Centra verticalmente */
+  align-items: center;            /* Centra horizontalmente */
+  text-align: center;             /* Centra el texto dentro */
+  max-width: 600px;               /* Limita el ancho máximo */
+  margin: 0 auto;                 /* Centra horizontalmente */
+  border-radius: 10px;            /* Bordes redondeados */
+}
+
+/* Texto del hero */
+.hero-texto h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.4rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.hero-etiqueta {
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+  color: #f28c28;                 /* Naranjo marca */
+  font-weight: 500;
 }
 
 
