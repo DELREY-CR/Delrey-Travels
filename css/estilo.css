@@ -231,10 +231,9 @@ section p {
   border-radius: 10px;
   padding: 20px; /* Espaciado interno de la tarjeta */
   text-align: center; /* Centra el contenido dentro de la tarjeta */
-  min-height: 400px; /* Altura mínima para que todas tengan el mismo tamaño base */
-  display: grid; /* Grid divide la tarjeta en filas flexibles para alinear elementos */
-  grid-template-rows: auto auto auto 1fr auto; /* img, h2, p, espacio flexible, botón */
-  align-content: start; /* Alinea el contenido al inicio */
+  min-height: 600px; /* Altura mínima para que todas tengan el mismo tamaño base */
+  display: flex; /* Flexbox para alinear el contenido verticalmente */
+  flex-direction: column; /* Coloca los elementos en columna */
 }
 
 .servicio:hover {
@@ -268,6 +267,7 @@ section p {
   margin: 15px 0;
   padding-left: 20px;
   list-style: disc;
+  flex-grow: 1; /* Expande la lista para ocupar el espacio disponible */
 }
 
 .servicio-lista li {
@@ -287,9 +287,10 @@ section p {
 }
 
 .servicio-precio strong {
-  color: var(--color-principal);
+  color: var(--color-acento);
   font-weight: 700;
 }
+
 
 /* Párrafos generales dentro de servicios */
 .parrafo-servicio {
@@ -302,12 +303,13 @@ section p {
 
 /* Espaciado específico para botones dentro de servicios */
 .servicio .btn-primario {
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin-top: 30px; /* Empuja el botón hacia abajo automáticamente */
+  margin-bottom: 30px;
   max-width: 200px; /* Limita el ancho del botón para mejor proporción */
   width: 100%; /* Se adapta al contenido pero respeta el max-width */
   margin-left: auto; /* Junto con margin-right: auto centra el botón */
   margin-right: auto;
+  padding: 10px 20px;
 }
 
 /* =========================
